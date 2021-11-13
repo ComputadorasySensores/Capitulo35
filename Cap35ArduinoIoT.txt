@@ -1,0 +1,21 @@
+La siguientes líneas deben ingresarse en el código que se genera dinámicamente siguiendo el video Capítulo 35 de Computadoras y Sensores.
+
+
+DHTesp dht;
+
+dht.setup(4,DHTesp::DHT22);
+
+dht22_temperatura = dht.getTemperature();
+dht22_humedad = dht.getHumidity();
+delay(5000);
+
+///////////////////////////////////////
+#define relay_gpio 16
+
+pinMode(relay_gpio, OUTPUT);
+
+if (esp32_relay){
+    digitalWrite(relay_gpio, HIGH);
+  } else {
+    digitalWrite(relay_gpio, LOW);
+  }
